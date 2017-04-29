@@ -1,0 +1,80 @@
+java.util.Scanner;
+
+//Programmer Vincenzo Giaimo, ITM 311
+
+public class GPA {
+	public static void main(String[] args){
+	
+	// user input
+	Scanner input = new Scanner(System.in);
+	// variable will hold user gpa
+	double gpa = 0;
+	
+	//studentStatus will hold value 1 for full time and 2 for part time
+	int studentStatus= 0;
+	
+	// do while loop will execute if someone chooses a number smaller then one or greater then 2
+	do{
+	System.out.print("Hello there , if your a full time student press 1, if part time press 2 :"
+	studentStatus = input.nextInt();
+	// if studentStatus is smaller then 1 or greater then two will tell user error
+	if (studentStatus < 1 || studentStatus > 2 )
+	{
+		System.out.println("error: you must either press 1 or press 2");
+	}
+	
+	}while (studentStatus < 1 || studentStatus > 2);
+	//do while loop closed
+	
+	// case statements for student full time and part time
+	switch (studentStatus)
+	{
+	case 1: System.out.println("you have selected student status of full time");
+	        System.out.print(" please enter your gpa: ");
+	        gpa = input.nextDouble();
+	        
+	        if (gpa >= 3.50)
+	        {
+	        	System.out.println("Congratulations you have made the deans list!");
+	        	break;
+	        }
+	        
+	        else 
+	        {
+	        	System.out.println("sorry you did not make the deans list, try harder next time"); 
+	        	break;
+	        }
+	        
+	        
+	case 2: System.out.println("you have selected student status of part time");
+			System.out.print("please enter your gpa: ");
+			gpa = input.nextDouble();
+			
+			if (gpa >= 3.50)
+			{
+				System.out.println("you did not make the deans list because of not being a full time student, but if you "
+				+ "were full time and had that gpa you would have made the deans list");
+				break;
+			}
+			
+			else if (gpa >= 3.50)
+			{
+				System.out.println("you did not make the deans list because your not a full time student");
+				break;
+			}
+			
+			else 
+			{
+				System.out.println("you did not make the deans list because of your grades and also not being a full time student");
+				break;
+			}
+	//fall back if somehow error doesnt show up from do while loop at top	
+	default: System.out.println("error: you must either press 1 or press 2");
+	        break;
+	}// end of switch statement
+	
+	
+}
+}
+
+
